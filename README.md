@@ -159,5 +159,3 @@ Questo progetto è rilasciato sotto licenza MIT. Consulta il file [LICENSE](LICE
 La licenza MIT permette l'uso commerciale del codice. Se utilizzi questo progetto in prodotti commerciali, ti chiediamo gentilmente di:
 - Mantenere l'attribuzione del copyright
 - Considerare di contribuire con miglioramenti alla community
-
-// ...existing code...
