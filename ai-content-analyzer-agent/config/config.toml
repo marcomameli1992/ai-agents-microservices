@@ -1,0 +1,8 @@
+[ai_models]
+max_concurrent_requests = 5
+
+[services]
+content_analyzer_port = 8002
+
+[logging]
+level = "INFO"

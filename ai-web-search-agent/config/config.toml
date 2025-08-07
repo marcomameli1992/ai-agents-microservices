@@ -1,0 +1,6 @@
+# filepath: ai-web-search-agent/config/config.toml
+[ai_models]
+search_model = "sentence-transformers/all-MiniLM-L6-v2"
+
+[services]
+web_search_port = 8001

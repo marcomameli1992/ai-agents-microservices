@@ -1,0 +1,35 @@
+[general]
+debug = true
+log_level = "INFO"
+
+[services]
+gateway_host = "localhost"
+gateway_port = 8000
+web_search_host = "localhost"
+web_search_port = 8001
+content_analyzer_host = "localhost" 
+content_analyzer_port = 8002
+data_storage_host = "localhost"
+data_storage_port = 8003
+
+[ai_models]
+# Configurazione per modelli AI locali
+model_path = "./models"
+search_model = "sentence-transformers/all-MiniLM-L6-v2"
+content_model = "microsoft/DialoGPT-medium"
+max_concurrent_requests = 3
+
+[web_search]
+# Configurazione per ricerca web
+search_engines = ["duckduckgo", "bing"]
+max_results = 10
+timeout = 30
+
+[database]
+# Configurazione storage
+storage_format = "pandas"
+data_path = "./data"
+backup_enabled = true
+
+[docker]
+network_name = "ai-agents-network"

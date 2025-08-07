@@ -1,0 +1,12 @@
+[config/config.toml]
+[server]
+host = "0.0.0.0"
+port = 8000
+
+[agents]
+web_search_agent_url = "http://web-search-agent:5000"
+content_analyzer_agent_url = "http://content-analyzer-agent:5000"
+
+[logging]
+level = "INFO"
+format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

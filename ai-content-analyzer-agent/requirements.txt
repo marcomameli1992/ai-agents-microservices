@@ -1,0 +1,13 @@
+fastapi
+aiohttp
+beautifulsoup4
+pydantic
+pytest
+pytest-asyncio
+uvicorn
+aiofiles
+duckduckgo-search
+sentence-transformers
+numpy
+toml
+pandas

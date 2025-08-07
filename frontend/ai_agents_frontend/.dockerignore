@@ -1,0 +1,25 @@
+# filepath: c:\Users\MarcoMameli\Downloads\AgenticAILecture4\code\ai-agents-microservices\frontend\ai_agents_frontend\.dockerignore
+# Flutter/Dart related
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# IDE related
+.idea/
+.vscode/
+*.iml
+
+# OS related
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+README.md

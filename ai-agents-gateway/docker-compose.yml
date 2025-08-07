@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    environment:
+      - ENV_FILE=.env.example
+    command: ["pytest", "tests/"]

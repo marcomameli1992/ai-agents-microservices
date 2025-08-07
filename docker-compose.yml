@@ -1,0 +1,62 @@
+services:
+  ai-web-search-agent:
+    build: 
+      context: ./ai-web-search-agent
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    networks:
+      - ai-agents-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  ai-content-analyzer-agent:
+    build:
+      context: ./ai-content-analyzer-agent
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8002"
+    networks:
+      - ai-agents-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  ai-agents-gateway:
+    build:
+      context: ./ai-agents-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - ai-web-search-agent
+      - ai-content-analyzer-agent
+    networks:
+      - ai-agents-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+  
+  frontend:
+    build:
+      context: ./frontend/ai_agents_frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - ai-agents-gateway
+    networks:
+      - ai-agents-network
+    environment:
+      - API_BASE_URL=http://localhost:8000
+
+networks:
+  ai-agents-network:
+    driver: bridge

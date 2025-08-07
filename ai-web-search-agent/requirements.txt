@@ -1,0 +1,9 @@
+fastapi
+aiohttp
+duckduckgo-search
+sentence-transformers
+numpy
+uvicorn
+pydantic
+toml
+pytest

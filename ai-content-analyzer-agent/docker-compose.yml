@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  content-analyzer-agent:
+    build:
+      context: ./src
+      dockerfile: ../Dockerfile
+    ports:
+      - "${CONTENT_ANALYZER_PORT}:80"
+    environment:
+      - CONTENT_ANALYZER_PORT=${CONTENT_ANALYZER_PORT}
+    volumes:
+      - ./src:/app/src
+      - ./config:/app/config
+      - ./tests:/app/tests
+    networks:
+      - content-analyzer-network
+
+networks:
+  content-analyzer-network:
+    driver: bridge
